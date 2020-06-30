@@ -5,10 +5,6 @@ const restaurantSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  description: {
-    type: String,
-    required: true
-  },
   cuisine: {
     type: String,
     required: true
@@ -26,11 +22,14 @@ const restaurantSchema = new mongoose.Schema({
     required: true,
     max: 5,
     min: 0
+  },
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   }
 }, {
   timestamps: true
 })
 
-const Restaurants = mongoose.model('Restaurant', restaurantSchema)
-
-module.exports = Restaurants
+module.exports = mongoose.model('Restaurant', restaurantSchema)
