@@ -1,7 +1,7 @@
 #!/bin/bash
 
 API="http://localhost:4741"
-URL_PATH="/restaurants"
+URL_PATH="/delete-restaurant"
 
 curl "${API}${URL_PATH}/${ID}" \
   --include \
